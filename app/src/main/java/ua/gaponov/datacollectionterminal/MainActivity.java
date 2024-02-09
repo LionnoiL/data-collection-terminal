@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Helpers.context = getApplicationContext();
         getOptions();
         setContentView(R.layout.activity_main);
     }
