@@ -2,24 +2,15 @@ package ua.gaponov.datacollectionterminal.utils;
 
 
 import static ua.gaponov.datacollectionterminal.utils.Helpers.c1ShopId;
-import static ua.gaponov.datacollectionterminal.utils.Helpers.c1UserName;
-import static ua.gaponov.datacollectionterminal.utils.Helpers.c1UserPassword;
 import static ua.gaponov.datacollectionterminal.utils.Helpers.host;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.util.Base64;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import ua.gaponov.datacollectionterminal.activity.PriceChekActivity;
 import ua.gaponov.datacollectionterminal.entity.Product;
