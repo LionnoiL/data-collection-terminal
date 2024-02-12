@@ -2,6 +2,7 @@ package ua.gaponov.datacollectionterminal;
 
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class PriceChekActivity extends AppCompatActivity {
         textViewBarCode = findViewById(R.id.textViewBarCode);
         textViewPrice = findViewById(R.id.textViewPrice);
         textViewStock = findViewById(R.id.textViewStock);
+
     }
 
     @Override
