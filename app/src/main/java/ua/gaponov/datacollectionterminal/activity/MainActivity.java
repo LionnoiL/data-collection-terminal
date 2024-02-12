@@ -1,12 +1,15 @@
-package ua.gaponov.datacollectionterminal;
+package ua.gaponov.datacollectionterminal.activity;
 
-import static ua.gaponov.datacollectionterminal.Helpers.getOptions;
+import static ua.gaponov.datacollectionterminal.utils.Helpers.getOptions;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ua.gaponov.datacollectionterminal.utils.Helpers;
+import ua.gaponov.datacollectionterminal.R;
 
 public class MainActivity extends AppCompatActivity {
 

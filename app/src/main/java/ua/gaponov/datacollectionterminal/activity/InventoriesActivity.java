@@ -1,10 +1,12 @@
-package ua.gaponov.datacollectionterminal;
+package ua.gaponov.datacollectionterminal.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ua.gaponov.datacollectionterminal.R;
 
 public class InventoriesActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package ua.gaponov.datacollectionterminal;
+package ua.gaponov.datacollectionterminal.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

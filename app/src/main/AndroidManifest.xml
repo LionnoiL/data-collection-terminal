@@ -20,7 +20,7 @@
         android:theme="@style/Theme.DataCollectionTerminal"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,10 +29,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="ua.gaponov.datacollectionterminal.PriceChekActivity"></activity>
-        <activity android:name="ua.gaponov.datacollectionterminal.OptionsActivity"></activity>
-        <activity android:name="ua.gaponov.datacollectionterminal.InventoriesActivity"></activity>
-        <activity android:name="ua.gaponov.datacollectionterminal.InventoryDetailActivity"></activity>
+        <activity android:name="ua.gaponov.datacollectionterminal.activity.PriceChekActivity"></activity>
+        <activity android:name="ua.gaponov.datacollectionterminal.activity.OptionsActivity"></activity>
+        <activity android:name="ua.gaponov.datacollectionterminal.activity.InventoriesActivity"></activity>
+        <activity android:name="ua.gaponov.datacollectionterminal.activity.InventoryDetailActivity"></activity>
 
     </application>
 

@@ -1,4 +1,4 @@
-package ua.gaponov.datacollectionterminal;
+package ua.gaponov.datacollectionterminal.utils;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 

@@ -1,7 +1,7 @@
-package ua.gaponov.datacollectionterminal;
+package ua.gaponov.datacollectionterminal.activity;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
-import static ua.gaponov.datacollectionterminal.Helpers.getOptions;
+import static ua.gaponov.datacollectionterminal.utils.Helpers.getOptions;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ua.gaponov.datacollectionterminal.R;
 
 public class OptionsActivity extends AppCompatActivity {
 
