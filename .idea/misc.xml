@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/wmcon/AndroidStudioProjects/Datacollectionterminal/app/src/main/res/layout/activity_inventories.xml" value="0.34646739130434784" />
         <entry key="..\:/Users/wmcon/AndroidStudioProjects/Datacollectionterminal/app/src/main/res/layout/activity_main.xml" value="0.3278985507246377" />
         <entry key="..\:/Users/wmcon/AndroidStudioProjects/Datacollectionterminal/app/src/main/res/layout/activity_options.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/wmcon/AndroidStudioProjects/Datacollectionterminal/app/src/main/res/layout/activity_price_check.xml" value="0.34782608695652173" />
+        <entry key="..\:/Users/wmcon/AndroidStudioProjects/Datacollectionterminal/app/src/main/res/layout/item_inventory.xml" value="0.34646739130434784" />
       </map>
     </option>
   </component>

@@ -31,6 +31,8 @@
 
         <activity android:name="ua.gaponov.datacollectionterminal.PriceChekActivity"></activity>
         <activity android:name="ua.gaponov.datacollectionterminal.OptionsActivity"></activity>
+        <activity android:name="ua.gaponov.datacollectionterminal.InventoriesActivity"></activity>
+        <activity android:name="ua.gaponov.datacollectionterminal.InventoryDetailActivity"></activity>
 
     </application>
 

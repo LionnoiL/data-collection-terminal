@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnInventoryClick(View view) {
-
+        Intent intent = new Intent(MainActivity.this, InventoriesActivity.class);
+        startActivity(intent);
     }
 
     public void onBtnOptionsClick(View view) {
