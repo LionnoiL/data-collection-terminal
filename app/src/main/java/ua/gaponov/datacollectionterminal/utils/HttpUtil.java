@@ -1,4 +1,4 @@
-package ua.gaponov.datacollectionterminal.http;
+package ua.gaponov.datacollectionterminal.utils;
 
 import static ua.gaponov.datacollectionterminal.utils.Helpers.c1UserName;
 import static ua.gaponov.datacollectionterminal.utils.Helpers.c1UserPassword;

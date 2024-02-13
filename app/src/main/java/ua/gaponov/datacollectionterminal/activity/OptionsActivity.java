@@ -29,7 +29,7 @@ public class OptionsActivity extends AppCompatActivity {
         editTextIp = findViewById(R.id.editTextIp);
         editTextUser = findViewById(R.id.editTextUser);
         editTextPass = findViewById(R.id.editTextPass);
-        editTextShopId = findViewById(R.id.editTextShopId);
+        editTextShopId = findViewById(R.id.editTextComment);
 
         String savedHost = mSharedPref.getString("HOST_NAME", "");
         String savedUser = mSharedPref.getString("USER_NAME", "");

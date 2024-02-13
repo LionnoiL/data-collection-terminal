@@ -8,8 +8,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ua.gaponov.datacollectionterminal.utils.Helpers;
 import ua.gaponov.datacollectionterminal.R;
+import ua.gaponov.datacollectionterminal.activity.inventory.InventoriesActivity;
+import ua.gaponov.datacollectionterminal.utils.Helpers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Helpers.context = getApplicationContext();
         getOptions();
+        Helpers.dbConnect();
         setContentView(R.layout.activity_main);
     }
 

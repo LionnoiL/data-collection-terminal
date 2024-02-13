@@ -1,6 +1,6 @@
 package ua.gaponov.datacollectionterminal.utils;
 
-import ua.gaponov.datacollectionterminal.entity.Product;
+import ua.gaponov.datacollectionterminal.product.Product;
 
 public interface OnGetBarcode {
 

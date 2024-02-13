@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ua.gaponov.datacollectionterminal.entity.Product;
-import ua.gaponov.datacollectionterminal.utils.BarcodeReceiver;
 import ua.gaponov.datacollectionterminal.R;
+import ua.gaponov.datacollectionterminal.product.Product;
+import ua.gaponov.datacollectionterminal.utils.BarcodeReceiver;
 import ua.gaponov.datacollectionterminal.utils.OnGetBarcode;
 
 public class PriceChekActivity extends AppCompatActivity {
@@ -64,6 +64,7 @@ public class PriceChekActivity extends AppCompatActivity {
         public void beforeGetBarcode() {
             handler.removeCallbacks(runnable);
         }
+
         @Override
         public void afterGetBarcode() {
             handler.postDelayed(runnable, 5000);

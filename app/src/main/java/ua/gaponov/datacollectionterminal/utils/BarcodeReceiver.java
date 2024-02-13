@@ -13,15 +13,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import ua.gaponov.datacollectionterminal.activity.PriceChekActivity;
-import ua.gaponov.datacollectionterminal.entity.Product;
-import ua.gaponov.datacollectionterminal.http.HttpUtil;
+import ua.gaponov.datacollectionterminal.product.Product;
 
 public class BarcodeReceiver extends BroadcastReceiver {
 
     private static final String BARCODE_PARAM = "barocode";
-    private PriceChekActivity.BarcodeReceiverListener barcodeReceiverListener;
+    private OnGetBarcode barcodeReceiverListener;
 
-    public BarcodeReceiver(PriceChekActivity.BarcodeReceiverListener barcodeReceiverListener) {
+    public BarcodeReceiver(OnGetBarcode barcodeReceiverListener) {
         this.barcodeReceiverListener = barcodeReceiverListener;
     }
 
