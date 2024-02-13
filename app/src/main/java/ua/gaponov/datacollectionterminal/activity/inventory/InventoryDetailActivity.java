@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import ua.gaponov.datacollectionterminal.inventory.InventoryService;
 import ua.gaponov.datacollectionterminal.product.Product;
 import ua.gaponov.datacollectionterminal.utils.BarcodeReceiver;
 import ua.gaponov.datacollectionterminal.utils.DateUtils;
+import ua.gaponov.datacollectionterminal.utils.Helpers;
 import ua.gaponov.datacollectionterminal.utils.OnGetBarcode;
 
 public class InventoryDetailActivity extends AppCompatActivity {
@@ -124,6 +126,10 @@ public class InventoryDetailActivity extends AppCompatActivity {
                 inventoryItem.setQuantity(inventoryItem.getQuantity() + 1);
                 inventoryItem.setDocId(inventory.getDocId());
                 show();
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        Helpers.getString(R.string.product_not_found),Toast.LENGTH_SHORT
+                ).show();
             }
         }
 

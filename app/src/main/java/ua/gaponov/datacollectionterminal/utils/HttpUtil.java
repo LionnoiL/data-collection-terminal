@@ -33,8 +33,6 @@ public class HttpUtil {
             while ((bytesRead = in.read(contents)) != -1) {
                 strRes += new String(contents, 0, bytesRead);
             }
-
-            System.out.print(strRes);
             return strRes;
         } catch (Exception e) {
             System.out.println(e.getMessage());

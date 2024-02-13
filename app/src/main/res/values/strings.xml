@@ -6,4 +6,5 @@
     <string name="inventories">Інвентаризація</string>
     <string name="new_inventory">Нова інвентаризація</string>
     <string name="database_cleared">Базу успішно очищено</string>
+    <string name="product_not_found">Товар не знайдений</string>
 </resources>

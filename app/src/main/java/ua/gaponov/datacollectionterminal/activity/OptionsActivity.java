@@ -67,6 +67,8 @@ public class OptionsActivity extends AppCompatActivity {
     public void onBtnClearDBClick(View view) {
         InventoryService.deleteAll();
         ProductService.deleteAll();
-        Toast.makeText(getApplicationContext(), Helpers.getString(R.string.database_cleared),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),
+                Helpers.getString(R.string.database_cleared),Toast.LENGTH_LONG
+        ).show();
     }
 }
