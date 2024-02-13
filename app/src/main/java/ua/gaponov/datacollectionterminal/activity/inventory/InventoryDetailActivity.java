@@ -4,12 +4,14 @@ import static ua.gaponov.datacollectionterminal.utils.Constants.ACCESS_MESSAGE;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -17,7 +19,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import ua.gaponov.datacollectionterminal.R;
-import ua.gaponov.datacollectionterminal.activity.PriceChekActivity;
 import ua.gaponov.datacollectionterminal.inventory.Inventory;
 import ua.gaponov.datacollectionterminal.inventory.InventoryItem;
 import ua.gaponov.datacollectionterminal.inventory.InventoryService;
@@ -94,18 +95,34 @@ public class InventoryDetailActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private InventoryItem findItemByCode(String code) {
+        InventoryItem inventoryItem = inventory.getItems()
+                .stream()
+                .filter(i -> code.equals(i.getCode()))
+                .findFirst()
+                .orElseGet(() ->
+                {
+                    InventoryItem item = new InventoryItem();
+                    inventory.getItems().add(item);
+                    return item;
+                });
+
+        return inventoryItem;
+    }
+
     public class BarcodeReceiverListener implements OnGetBarcode {
 
+        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void getBarcode(Product product) {
             if (product.getCode() != null && !product.getCode().isEmpty()) {
-                InventoryItem inventoryItem = new InventoryItem();
+                InventoryItem inventoryItem = findItemByCode(product.getCode());
                 inventoryItem.setCode(product.getCode());
                 inventoryItem.setProductName(product.getName());
                 inventoryItem.setPrice(product.getPrice());
-                inventoryItem.setQuantity(1);
+                inventoryItem.setQuantity(inventoryItem.getQuantity() + 1);
                 inventoryItem.setDocId(inventory.getDocId());
-                inventory.getItems().add(inventoryItem);
                 show();
             }
         }
