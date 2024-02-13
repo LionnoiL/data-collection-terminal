@@ -35,4 +35,12 @@ public class Helpers {
         helper = new SQLOpenHelper(context, 1);
         db = helper.getWritableDatabase();
     }
+
+    public static String getString(int id){
+        if (context==null){
+            return "";
+        }
+
+        return context.getResources().getString(id);
+    }
 }

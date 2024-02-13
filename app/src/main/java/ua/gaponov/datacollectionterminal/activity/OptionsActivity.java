@@ -7,10 +7,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import ua.gaponov.datacollectionterminal.R;
+import ua.gaponov.datacollectionterminal.inventory.InventoryService;
+import ua.gaponov.datacollectionterminal.product.ProductService;
+import ua.gaponov.datacollectionterminal.utils.Helpers;
 
 public class OptionsActivity extends AppCompatActivity {
 
@@ -58,5 +62,11 @@ public class OptionsActivity extends AppCompatActivity {
 
     public void onbtnChancelClick(View view) {
         finish();
+    }
+
+    public void onBtnClearDBClick(View view) {
+        InventoryService.deleteAll();
+        ProductService.deleteAll();
+        Toast.makeText(getApplicationContext(), Helpers.getString(R.string.database_cleared),Toast.LENGTH_LONG).show();
     }
 }

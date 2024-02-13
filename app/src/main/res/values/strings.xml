@@ -5,4 +5,5 @@
     <string name="options">Налаштування</string>
     <string name="inventories">Інвентаризація</string>
     <string name="new_inventory">Нова інвентаризація</string>
+    <string name="database_cleared">Базу успішно очищено</string>
 </resources>

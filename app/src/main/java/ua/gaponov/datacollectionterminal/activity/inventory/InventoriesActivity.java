@@ -1,5 +1,7 @@
 package ua.gaponov.datacollectionterminal.activity.inventory;
 
+import static ua.gaponov.datacollectionterminal.utils.Constants.ACCESS_MESSAGE;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -49,8 +51,8 @@ public class InventoriesActivity extends AppCompatActivity {
                 result -> {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent intent = result.getData();
-                        boolean up = intent.getBooleanExtra("ACCESS_MESSAGE", false);
-                        if (up) {
+                        boolean needUpdate = intent.getBooleanExtra(ACCESS_MESSAGE, false);
+                        if (needUpdate) {
                             show();
                         }
                     }
@@ -66,7 +68,7 @@ public class InventoriesActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(InventoriesActivity.this, InventoryDetailActivity.class);
         intent.putExtra("doc", inventory);
-        startActivity(intent);
+        mStartForResult.launch(intent);
     }
 
     public void show() {

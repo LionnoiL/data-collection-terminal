@@ -8,6 +8,10 @@ import android.database.Cursor;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class InventoryService {
 
     public static List<Inventory> getInventories() {
@@ -96,6 +100,7 @@ public class InventoryService {
                     new String[]{docId}
             );
             if (cursor.getCount()>0){
+                cursor.close();
                 //update
                 db.execSQL("delete from inventory_items where inventory_id = ?",
                         new String[]{docId});
@@ -114,6 +119,8 @@ public class InventoryService {
                                 inventory.getDate(),
                                 inventory.getComment()
                         });
+
+                docId = getLastInsertId();
             }
 
             for (InventoryItem inventoryItem : inventory.getItems()) {
@@ -134,5 +141,24 @@ public class InventoryService {
         }
 
 
+    }
+
+    public static void deleteAll(){
+        db.execSQL("delete from inventory_items", new String[]{});
+        db.execSQL("delete from inventory", new String[]{});
+    }
+
+    private static String getLastInsertId() {
+        Cursor cursorTmp;
+        cursorTmp = db.rawQuery("SELECT last_insert_rowid() as id;",
+                new String[]{}
+        );
+        if (cursorTmp.getCount()>0){
+            cursorTmp.moveToFirst();
+            @SuppressLint("Range") long newId = cursorTmp.getLong(cursorTmp.getColumnIndex("id"));
+            cursorTmp.close();
+            return String.valueOf(newId);
+        }
+        return "0";
     }
 }

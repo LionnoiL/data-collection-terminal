@@ -1,5 +1,8 @@
 package ua.gaponov.datacollectionterminal.activity.inventory;
 
+import static ua.gaponov.datacollectionterminal.utils.Constants.ACCESS_MESSAGE;
+
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
@@ -60,7 +63,13 @@ public class InventoryDetailActivity extends AppCompatActivity {
     }
 
     public void onBtnSendDocClick(View view) {
+        inventory.setComment(editTextComment.getText().toString());
         InventoryService.save(inventory);
+
+        Intent data = new Intent();
+        data.putExtra(ACCESS_MESSAGE, true);
+        setResult(RESULT_OK, data);
+        finish();
     }
 
     public void onBtnCloseClick(View view) {
@@ -91,6 +100,7 @@ public class InventoryDetailActivity extends AppCompatActivity {
         public void getBarcode(Product product) {
             if (product.getCode() != null && !product.getCode().isEmpty()) {
                 InventoryItem inventoryItem = new InventoryItem();
+                inventoryItem.setCode(product.getCode());
                 inventoryItem.setProductName(product.getName());
                 inventoryItem.setPrice(product.getPrice());
                 inventoryItem.setQuantity(1);
