@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class InventoryDetailActivity extends AppCompatActivity {
     private Inventory inventory;
     private TextView editTextComment;
     private ListView listView = null;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class InventoryDetailActivity extends AppCompatActivity {
 
         editTextComment = findViewById(R.id.editTextComment);
         listView = findViewById(R.id.listViewInventoryDetailItems);
+        spinner = findViewById(R.id.progressBar);
+        spinner.setVisibility(ProgressBar.INVISIBLE);
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -118,6 +122,7 @@ public class InventoryDetailActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void getBarcode(Product product) {
+            spinner.setVisibility(ProgressBar.INVISIBLE);
             if (product.getCode() != null && !product.getCode().isEmpty()) {
                 InventoryItem inventoryItem = findItemByCode(product.getCode());
                 inventoryItem.setCode(product.getCode());
@@ -135,7 +140,7 @@ public class InventoryDetailActivity extends AppCompatActivity {
 
         @Override
         public void beforeGetBarcode() {
-
+            spinner.setVisibility(ProgressBar.VISIBLE);
         }
 
         @Override

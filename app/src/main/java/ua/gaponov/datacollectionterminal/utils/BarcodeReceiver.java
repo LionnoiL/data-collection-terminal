@@ -59,13 +59,14 @@ public class BarcodeReceiver extends BroadcastReceiver {
                     product.setStock(json.getString("stock"));
                 }
                 barcodeReceiverListener.getBarcode(product);
+                barcodeReceiverListener.afterGetBarcode();
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         });
         getHttpData.execute();
-        barcodeReceiverListener.afterGetBarcode();
+
     }
 
     public interface HttpEnd {

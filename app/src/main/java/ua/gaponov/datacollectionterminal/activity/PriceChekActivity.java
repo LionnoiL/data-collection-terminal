@@ -3,6 +3,8 @@ package ua.gaponov.datacollectionterminal.activity;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,7 @@ public class PriceChekActivity extends AppCompatActivity {
     private TextView textViewBarCode;
     private TextView textViewPrice;
     private TextView textViewStock;
+    private ProgressBar spinner;
     private BarcodeReceiverListener barcodeReceiverListener = new BarcodeReceiverListener();
     private Runnable runnable = () -> clearText();
     private Handler handler = new Handler();
@@ -32,6 +35,9 @@ public class PriceChekActivity extends AppCompatActivity {
         textViewBarCode = findViewById(R.id.textViewBarCode);
         textViewPrice = findViewById(R.id.textViewPrice);
         textViewStock = findViewById(R.id.textViewStock);
+
+        spinner = findViewById(R.id.progressBar);
+        spinner.setVisibility(View.GONE);
     }
 
     @Override
@@ -62,12 +68,14 @@ public class PriceChekActivity extends AppCompatActivity {
 
         @Override
         public void beforeGetBarcode() {
+            spinner.setVisibility(View.VISIBLE);
             handler.removeCallbacks(runnable);
         }
 
         @Override
         public void afterGetBarcode() {
             handler.postDelayed(runnable, 5000);
+            spinner.setVisibility(View.GONE);
         }
     }
 }
